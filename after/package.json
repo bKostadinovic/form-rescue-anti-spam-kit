@@ -6,7 +6,8 @@
   "main": "src/server.js",
   "scripts": {
     "dev": "node src/server.js",
-    "test": "node -e \"console.log('tests coming next')\""
+    "export:csv": "node tools/exportCsv.js",
+    "test": "node tests/storage.test.js"
   },
   "dependencies": {
     "express": "^4.19.2"
