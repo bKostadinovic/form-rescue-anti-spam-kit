@@ -6,7 +6,7 @@ const app = express();
 
 app.use(express.json());
 
-// serve the frontend
+// server the frontend
 app.use(express.static(path.join(__dirname, '..', '/public')));
 
 app.get('/health', (req, res) => {

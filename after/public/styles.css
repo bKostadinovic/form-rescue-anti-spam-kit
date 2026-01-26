@@ -80,6 +80,16 @@ button {
     color: var(--text);
     cursor: pointer;
 }
+/* honeypot field - should be hidden from users */
+
+.hp {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
 
 /* status text, used for success/error messages */
 

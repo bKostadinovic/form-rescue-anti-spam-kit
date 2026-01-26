@@ -30,6 +30,12 @@
             <textarea id="message" name="message" rows="5" placeholder="Write your message here"></textarea>
           </div>
 
+          <!-- anti-spam: should stay empty (bots often fill everything) -->
+           <div class="hp">
+            <label for="company">Company></label>
+            <input id="company" name="company" type="text" autocomplete="off" />
+           </div>
+
           <button type="submit">Send Message</button>
 
           <p id="status" class="status"></p>
