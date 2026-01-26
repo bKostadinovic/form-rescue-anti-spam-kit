@@ -1,0 +1,14 @@
+{
+  "name": "form-rescue-after",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node src/server.js",
+    "test": "node -e \"console.log('tests coming next')\""
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
