@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+const { formRouter } = require('./routes/form');
 
 const app = express();
 
@@ -12,11 +13,7 @@ app.get('/health', (req, res) => {
     res.json({ ok: true });
 });
 
-// TEMP: basic form endpoint (we'll harden next)
-app.post('/api/form', (req, res) => {
-    // for now just echo back (no validation yet)
-    res.json({ ok: true, received: req.body });
-});
+app.use('/api/form', formRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

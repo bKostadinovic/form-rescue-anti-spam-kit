@@ -1,9 +1,13 @@
 const form = document.getElementById('contactForm');
 const statusEl = document.getElementById('status');
 
+function setStatus(msg) {
+    statusEl.textContent = msg || '';
+}
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    statusEl.textContent = 'Sending...';
+    setStatus('Sending...');
 
     const payload = {
         name: document.getElementById('name').value,
@@ -21,13 +25,13 @@ form.addEventListener('submit', async (e) => {
         const data = await res.json().catch(() => ({}));
 
         if (!res.ok) {
-            statusEl.textContent = data.error || 'Something went wrong. Please try again.';
+            setStatus(data.error || 'Something went wrong. Please try again.');
             return;
         }
 
-        statusEl.textContent = 'Sent. We\'ll reply soon.';
+        setStatus('Sent. We\'ll reply soon.');
         form.reset();
     } catch (err) {
-        statusEl.textContent = 'Network error. Please try again.';
+        setStatus('Network error. Please try again.');
     }
 });
