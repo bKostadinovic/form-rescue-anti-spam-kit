@@ -1,6 +1,9 @@
 const form = document.getElementById('contactForm');
 const statusEl = document.getElementById('status');
 
+// record when page was loaded
+const formLoadedAt = Date.now();
+
 function setStatus(msg) {
     statusEl.textContent = msg || '';
 }
@@ -13,6 +16,7 @@ form.addEventListener('submit', async (e) => {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         message: document.getElementById('message').value,
+        _ts: formLoadedAt, // timestamp when form was loaded
     };
 
     try {
