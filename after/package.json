@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node src/server.js",
     "export:csv": "node tools/exportCsv.js",
-    "test": "node tests/storage.test.js && node tests/honeypot.test.js && node tests/timingTrap.test.js && node tests/rateLimit.test.js"
+    "test": "node tests/storage.test.js && node tests/honeypot.test.js && node tests/timingTrap.test.js && node tests/rateLimit.test.js && node tests/validate.test.js"
   },
   "dependencies": {
     "express": "^4.19.2"
