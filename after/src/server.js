@@ -1,10 +1,12 @@
 const path = require('path');
 const express = require('express');
 const { formRouter } = require('./routes/form');
+const { requestLogger } = require("./utils/logger");
 
 const app = express();
 
 app.use(express.json());
+app.use(requestLogger());
 
 // server the frontend
 app.use(express.static(path.join(__dirname, '..', '/public')));
