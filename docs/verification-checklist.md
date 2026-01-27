@@ -1,8 +1,11 @@
 # Verification Checklist — Form Rescue & Anti-Spam Kit
 
-### This checklist is intentionally simple and does not require technical knowledge.
-### This checklist is designed so a non-technical site owner can verify that the contact form is working correctly and safely after deployment.
-### You can go through it top to bottom in 5–10 minutes.
+This checklist is intentionally simple and does not require technical knowledge.
+
+It is designed so a non-technical site owner can verify that the contact form is working correctly and safely after deployment.  
+You can go through it top to bottom in **5–10 minutes**.
+
+---
 
 ## 1. Basic form functionality
 
@@ -12,6 +15,8 @@
 - [ ] Submitting valid data shows a success message
 - [ ] Page does not reload on submit
 
+---
+
 ## 2. Validation (user mistakes)
 
 - [ ] Submitting with empty fields shows clear error messages
@@ -19,24 +24,28 @@
 - [ ] Extremely long messages are rejected
 - [ ] Errors are specific (not generic “something went wrong”)
 
+---
+
 ## 3. Spam protection
 
-Honeypot (hidden bot field)
+### Honeypot (hidden bot field)
 
 - [ ] Normal users can submit the form successfully
 - [ ] Automated submissions are silently ignored
 - [ ] Spam submissions do not appear in stored leads
 
-Timing protection
+### Timing protection
 
 - [ ] Submitting the form instantly (under ~1 second) is blocked
 - [ ] Normal human submissions work without issues
 
-Rate limiting
+### Rate limiting
 
 - [ ] Multiple rapid submissions from the same source are blocked
 - [ ] Server responds with a clear “too many submissions” message
 - [ ] Spam bursts do not overload the system
+
+---
 
 ## 4. Lead safety (no data loss)
 
@@ -45,13 +54,17 @@ Rate limiting
 - [ ] Stored leads can be exported to CSV
 - [ ] No duplicate submissions from double-clicking
 
+---
+
 ## 5. Email delivery (development mode)
 
 - [ ] Form submission triggers an email log in the server console
 - [ ] Email sending does not block form success
 - [ ] Temporary email issues do not affect lead storage
 
- Note: Production SMTP can be enabled later without code changes.
+> Note: Production SMTP can be enabled later without code changes.
+
+---
 
 ## 6. Observability & diagnostics
 
@@ -59,17 +72,21 @@ Rate limiting
 - [ ] Errors are visible in server logs
 - [ ] No sensitive data is printed to logs
 
+---
+
 ## 7. Health & uptime check
 
-- [ ] /health endpoint responds with { ok: true }
+- [ ] `/health` endpoint responds with `{ ok: true }`
 - [ ] Server starts without errors
 - [ ] Application runs without crashes during normal usage
 
-# Verification complete
+---
 
-### If all items above are checked, the form is:
+## Verification complete
 
- - Stable
- - Spam-resistant
- - Safe against lead loss
- - Ready for production use
+If all items above are checked, the form is:
+
+- Stable  
+- Spam-resistant  
+- Safe against lead loss  
+- Ready for production use
